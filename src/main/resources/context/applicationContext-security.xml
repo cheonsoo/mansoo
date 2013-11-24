@@ -16,10 +16,13 @@
 		<!-- <security:form-login login-page="/login.do" default-target-url='/' /> -->
 		
 		<security:intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS" />
-		<!-- <security:intercept-url pattern="/" access="ROLE_USER" /> -->
+		
+		<security:intercept-url pattern="/" access="ROLE_USER" />
+		
 		<security:form-login login-page="/?login=fail"
-							 default-target-url="/?login=success"
+							 default-target-url="/main?login=success"
 							 authentication-failure-url="/?error=1" />
+							 
 		<security:logout logout-success-url="/?login=fail" 
 						 logout-url="/j_spring_security_logout" />
 		

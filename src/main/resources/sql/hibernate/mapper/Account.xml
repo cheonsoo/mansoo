@@ -1,19 +1,25 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
 <hibernate-mapping>
-    <class name="com.mansoo.board.data.Account" table="ACCOUNT">
-        <id name="id" type="int">
-            <column name="ACCONT_KEY" />
+    <class name="com.mansoo.board.data.Account" table="Account">
+    
+        <id name="accountKey" type="int">
+            <column name="ACCOUNT_KEY" />
             <generator class="identity" />
         </id>
-        <property name="ACCOUNT_ID" type="string">
+        
+        <property name="accountId" type="string">
             <column name="ACCOUNT_ID" length="50" not-null="false" />
         </property>
-        <property name="ACCOUNT_NAME" type="string">
+        
+        <property name="accountName" type="string">
             <column name="ACCOUNT_NAME" length="50" not-null="false" />
         </property>
-        <property name="PASSWORD" type="string">
+        
+        <property name="password" type="string">
             <column name="PASSWORD" length="30" not-null="false" />
         </property>
+        
     </class>
 </hibernate-mapping>

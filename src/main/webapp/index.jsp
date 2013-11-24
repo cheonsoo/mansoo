@@ -1,5 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+	<h2>Hello World!!!</h2>
+	<% //response.sendRedirect("http://localhost:8080/mansoo/main"); %>
 </body>
 </html>

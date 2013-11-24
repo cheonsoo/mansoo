@@ -13,11 +13,11 @@
 		<div id="topNav">
 			<div class="topNavi">
 				<ul>
-					<li><a href="/mansoo">home</a></li>
-					<li><a href="/mansoo/?body=/contact">contact</a></li>
-					<li><a href="/mansoo">menu1</a></li>
-					<li><a href="/mansoo">menu2</a></li>
-					<li><a href="/mansoo">menu3</a></li>
+					<li><a href="/mansoo/main">home</a></li>
+					<li><a href="/mansoo/main/?body=/contact">contact</a></li>
+					<li><a href="/mansoo/main">menu1</a></li>
+					<li><a href="/mansoo/main">menu2</a></li>
+					<li><a href="/mansoo/main">menu3</a></li>
 				</ul>
 			</div>
 		</div>

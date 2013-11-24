@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Account {
 
     @Id
-    @Column(name = "ACCOUT_KEY")
+    @Column(name = "ACCOUNT_KEY")
     @GeneratedValue
     private int accountKey;
 
@@ -23,4 +23,40 @@ public class Account {
     
     @Column(name = "PASSWORD")
     private String password;
+
+	public int getAccountKey() {
+		return accountKey;
+	}
+
+	public void setAccountKey(int accountKey) {
+		this.accountKey = accountKey;
+	}
+
+	public String getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+	}
+
+	public String getAccountName() {
+		return accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+    
+    
+
+
 }

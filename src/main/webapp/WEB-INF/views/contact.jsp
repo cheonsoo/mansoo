@@ -51,7 +51,7 @@
         <td>${contact.lastname}, ${contact.firstname} </td>
         <td>${contact.email}</td>
         <td>${contact.telephone}</td>
-        <td><a href="delete/${contact.id}">delete</a></td>
+        <td><a href="main/delete/${contact.id}">delete</a></td>
     </tr>
 </c:forEach>
 </table>
