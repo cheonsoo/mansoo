@@ -24,39 +24,3 @@ CREATE TABLE CONTACT (
 	CREATED DATE NOT NULL,
 	PRIMARY KEY(CONTACT_ID)
 ) ENGINE=INNODB;
-
-CREATE TABLE ACCOUNT (
-	ACCOUNT_KEY INTEGER(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-	ACCOUNT_ID VARCHAR(255) NOT NULL,
-	ACCOUNT_NAME VARCHAR(255) NOT NULL,
-	PASSWORD VARCHAR(255) NOT NULL,
-	PRIMARY KEY(ACCOUNT_KEY)
-) ENGINE=INNODB;
-
-CREATE TABLE AUTHORITIES (
-    ACCOUNT_KEY INTEGER(11) NOT NULL,
-    AUTHORITY VARCHAR(50) NOT NULL,
-    FOREIGN KEY (ACCOUNT_KEY) REFERENCES ACCOUNT (ACCOUNT_KEY),
-    UNIQUE INDEX AUTHORITIES_IDX_1 (ACCOUNT_KEY, AUTHORITY)
-) ENGINE = INNODB;
-
-
-
-
-
-
-create table users (
-    username varchar(50) not null primary key,
-    password varchar(50) not null,
-    enabled boolean not null
-) engine = InnoDb;
-
-create table authorities (
-    username varchar(50) not null,
-    authority varchar(50) not null,
-    foreign key (username) references users (username),
-    unique index authorities_idx_1 (username, authority)
-) engine = InnoDb;
-
-INSERT INTO users(`username`,`password`,`enabled`) VALUES( 'admin','admin',1);
-INSERT INTO authorities(`username`,`authority`) VALUES('admin','ROLE_ADMIN');

@@ -56,8 +56,9 @@
         </property>
         <property name="mappingResources">
             <list>
-                <value>/sql/hibernate/mapper/Account.xml</value>
+                <value>/sql/hibernate/mapper/ACCOUNT.xml</value>
                 <value>/sql/hibernate/mapper/Contact.xml</value>
+				<!-- <value>/sql/hibernate/mapper/ACCOUNT_AUTHORITY.xml</value> -->
             </list>
         </property>
     </bean>
@@ -73,6 +74,23 @@
     <bean id="contactDAO" class="com.mansoo.board.dao.ContactDAOImpl">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
+    
+    
+    
+    <!-- <bean id="accountService" class="com.mansoo.board.service.AccountServiceImpl">
+		<property name="accountDAO" ref="accountDAO" />
+	</bean> -->
+    
+    <bean id="userService" class="com.mansoo.user.service.UserServiceImpl">
+		<property name="accountDAO" ref="accountDAO" />
+	</bean>
+	
+	
+    
+    
+	<!-- <bean id="userDAO" class="com.mansoo.board.dao.UserDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean> -->
     
     <tx:annotation-driven transaction-manager="transactionManager" />
     

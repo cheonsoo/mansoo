@@ -17,13 +17,15 @@
 		
 		<security:intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS" />
 		
-		<security:intercept-url pattern="/" access="ROLE_USER" />
+		<!-- <security:intercept-url pattern="/main" access="IS_AUTHENTICATED_ANONYMOUSLY" /> -->
 		
-		<security:form-login login-page="/?login=fail"
-							 default-target-url="/main?login=success"
-							 authentication-failure-url="/?error=1" />
+		<security:intercept-url pattern="/" access="ROLE_ADMIN, ROLE_USER" />
+		
+		<security:form-login login-page="/main"
+							 default-target-url="/main"
+							 authentication-failure-url="/main?error=1" />
 							 
-		<security:logout logout-success-url="/?login=fail" 
+		<security:logout logout-success-url="/main"
 						 logout-url="/j_spring_security_logout" />
 		
 	</security:http>
@@ -31,14 +33,22 @@
 	<bean id="userService" class="com.mansoo.user.service.UserService" />
 	
 	<security:authentication-manager>
-	
-		<!-- <security:authentication-provider user-service-ref="userService" /> -->
 		
 		<security:authentication-provider>
+			<security:jdbc-user-service 
+				data-source-ref="dataSource" 
+				users-by-username-query="select username, password, enabled from users where username=?"
+				authorities-by-username-query="select u.username, ur.authority from users u, user_roles ur where u.username = ur.username and u.username=?" />
+				
+		</security:authentication-provider>
+		
+		<!-- <security:authentication-provider user-service-ref="userService" /> -->
+		
+		<!-- <security:authentication-provider>
 			<security:user-service>
 				<security:user name="mansoo" password="mansoo" authorities="ROLE_USER" />
 			</security:user-service>
-		</security:authentication-provider>
+		</security:authentication-provider> -->
 		
 		 
 	</security:authentication-manager>
