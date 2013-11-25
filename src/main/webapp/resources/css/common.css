@@ -1,19 +1,31 @@
-.topDiv div {
-	display: inline;
+.mainOuter {
+	width:100%;
+	text-align:center;
 }
-.topNavi ul li {
-	display: inline
-}
-
-.input_div input {
-	width: 150px;
-}
-
-.input {
-	width: 150px;
+.mainDiv {
+	width: 80%;
+	height: 80%;
+	border: 1px gray solid;
+	border-radius: 10px;
+	margin: 0 auto;
 }
 
-.loginDiv div {
-	text-align: right;
-	display: inline;
+.topNavi {
+	text-align: center;
+	margin-bottom: 20px;
+	display: inline-flex;
+}
+.topNavi a:link,
+.topNavi a:visited,
+.topNavi a:hover,
+.topNavi a:active {
+	color: #000000;
+	text-decoration: none
+}
+
+
+
+
+.loginDiv {
+	display: inline-flex;
 }

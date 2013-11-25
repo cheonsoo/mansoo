@@ -7,6 +7,7 @@
 	<link type="text/css" rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/common.css" />
 	<link type="text/css" rel="stylesheet" href="<%= request.getContextPath() %>/resources/plugins/slimmenu/slimmenu.css" />
 	
+	<script src="<%= request.getContextPath() %>/resources/plugins/slimmenu/jquery.slimmenu.min.js"></script>
 	<script src="<%= request.getContextPath() %>/resources/plugins/slimmenu/jquery.easing.min.js"></script>
 	
 	<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
@@ -29,29 +30,37 @@
 	
 	<div class="topNavi">
 		<ul id="navigation" class="slimmenu">
-			<li><a href="/mansoo/main">HOME</a></li>
-			<li><a href="/mansoo/main/?body=/contact">CONTACT</a></li>
+			<li><a href="/mansoo/main">home</a></li>
+			<li><a href="/mansoo/main/?body=/contact">contact</a></li>
+			<li><a href="/mansoo/main">menu1</a></li>
 		    <li>
-		        <a href="#">MENU 1</a>
+		        <a href="#">Slim Menu 1</a>
 		        <ul>
 		            <li>
-		                <a href="#">MENU 1.1</a>
+		                <a href="#">Slim Menu 1.1</a>
 		                <ul>
-		                    <li><a href="#">MENU 1.1.1</a></li>
+		                    <li><a href="#">Slim Menu 1.1.1</a></li>
 		                    <li>
-		                        <a href="#">MENU 1.1.2</a>
+		                        <a href="#">Slim Menu 1.1.2</a>
 		                        <ul>
-		                            <li><a href="#">MENU 1.1.2.1</a></li>
-		                            <li><a href="#">MENU 1.1.2.2</a></li>
+		                            <li><a href="#">Slim Menu 1.1.2.1</a></li>
+		                            <li><a href="#">Slim Menu 1.1.2.2</a></li>
 		                        </ul>
 		                    </li>
 		                </ul>
 		            </li>
-		            <li><a href="#">MENU 1.2</a></li>
+		            <li><a href="#">Slim Menu 1.2</a></li>
 		        </ul>
 		    </li>
+			<li>
+				<a href="#">menu3</a>
+				<ul>
+					<li><a href="#">sub menu 1</a></li>
+					<li><a href="#">sub menu 2</a></li>
+					<li><a href="#">sub menu 3</a></li>
+				</ul>
+			</li>
 		</ul>
-		<div><jsp:include page="/loginpage" /></div>
 	</div>
 	
 	<div class="mainOuter">
@@ -59,8 +68,10 @@
 			<div>
 				<div class="header">
 					<div>MANSOO HOME</div>
-					
+					<div><jsp:include page="/loginpage" /></div>
 				</div>
+				
+				
 				
 				<div id="bodyContents">
 					<jsp:include page="${body}" />
@@ -72,7 +83,6 @@
 		</div>
 	</div>
 	
-	<script src="<%= request.getContextPath() %>/resources/plugins/slimmenu/jquery.slimmenu.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 	<script>
 		$('ul.slimmenu').slimmenu({
