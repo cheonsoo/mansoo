@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mansoo.board.data.User" table="USER">
+    
+        <id name="userKey" type="int">
+            <column name="USER_KEY" />
+            <generator class="identity" />
+        </id>
+        
+        <property name="userId" type="string">
+            <column name="USER_ID" length="50" not-null="false" />
+        </property>
+        
+        <property name="userName" type="string">
+            <column name="USER_NAME" length="50" not-null="false" />
+        </property>
+        
+        <property name="password" type="string">
+            <column name="PASSWORD" length="30" not-null="false" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

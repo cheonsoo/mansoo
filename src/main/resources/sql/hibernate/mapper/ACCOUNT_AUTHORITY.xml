@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mansoo.board.data.AccountAuthority" table="ACCOUNT_AUTHORITY">
+		
+		<one-to-one name="account" class="com.mansoo.board.data.Account" table="ACCOUNT" constrained="true"></one-to-one>
+		<one-to-one name="authority" class="com.mansoo.board.data.AccountAuthority" table="AUTHORITY" constrained="true"></one-to-one>
+		
+<!--         <set name="account" table="ACCOUNT" batch-size="50">
+			<key column="accountKey" />
+			<one-to-many class="com.mansoo.board.data.Account" />
+        </set>
+        
+        <set name="authority" table="AUTHORITY" batch-size="50">
+			<key column="authorityyKey" />
+			<one-to-many class="com.mansoo.board.data.Authority" />
+		</set> -->
+        
+		<!-- <one-to-one name="propertyName" class="ClassName" cascade="cascade_style" constrained="true|false" fetch="join|select" property-ref="propertyNameFromAssociatedClass" access="field|property|ClassName" formula="any SQL expression" lazy="proxy|no-proxy|false" entity-name="EntityName" node="element-name|@attribute-name|element/@attribute|." embed-xml="true|false" foreign-key="foreign_key_name" /> -->
+		
+
+        
+    </class>
+</hibernate-mapping>

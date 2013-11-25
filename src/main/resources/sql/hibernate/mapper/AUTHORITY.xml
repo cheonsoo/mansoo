@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mansoo.board.data.Authority" table="AUTHORITY">
+    
+        <id name="authorityKey" type="int">
+            <column name="AUTHORITY_KEY" />
+            <generator class="identity" />
+        </id>
+        
+        <property name="roleName" type="string">
+            <column name="ROLE_NAME" length="50" not-null="false" />
+        </property>
+        
+    </class>
+</hibernate-mapping>
