@@ -21,23 +21,12 @@
             <column name="ENABLED" not-null="false" />
         </property>
         
-        
-<!--         <id name="userKey" type="int">
-            <column name="USER_KEY" />
-            <generator class="identity" />
-        </id>
-        
-        <property name="userId" type="string">
-            <column name="USER_ID" length="50" not-null="false" />
-        </property>
-        
-        <property name="userName" type="string">
-            <column name="USER_NAME" length="50" not-null="false" />
-        </property>
-        
-        <property name="password" type="string">
-            <column name="PASSWORD" length="30" not-null="false" />
-        </property> -->
+        <set name="userRoles" table="USER_ROLES" inverse="true" lazy="true" fetch="select">
+        	<key>
+        		<column name="USERKEY" not-null="true" />
+        	</key>
+        	<one-to-many class="com.mansoo.board.data.UserRoles" />
+        </set>
         
     </class>
 </hibernate-mapping>

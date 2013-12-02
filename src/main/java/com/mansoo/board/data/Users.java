@@ -1,5 +1,7 @@
 package com.mansoo.board.data;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,6 +28,8 @@ public class Users {
     @Column(name = "ENABLED", columnDefinition = "TINYINT")
     @Type(type = "org.hibernate.type.NumericBooleanType")
     private boolean enabled;
+    
+    private Set<UserRoles> userRoles;
 
 	public String getUsername() {
 		return username;
@@ -57,5 +61,13 @@ public class Users {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public Set<UserRoles> getUserRoles() {
+		return userRoles;
+	}
+
+	public void setUserRoles(Set<UserRoles> userRoles) {
+		this.userRoles = userRoles;
 	}
 }

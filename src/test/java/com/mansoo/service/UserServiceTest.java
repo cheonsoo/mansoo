@@ -2,6 +2,7 @@ package com.mansoo.service;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Iterator;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +15,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mansoo.board.data.UserRoles;
 import com.mansoo.board.data.Users;
 import com.mansoo.board.service.UsersService;
 
@@ -26,6 +28,26 @@ public class UserServiceTest {
 	private UsersService usersService;
 	
 	@Test
+	public void getUsersTest() {
+		Users users = usersService.getUsers("user");
+		System.out.println(users.getUsername());
+		System.out.println("size : " + users.getUserRoles().size());
+		
+		Iterator<UserRoles> iter = users.getUserRoles().iterator();
+		String rolesStr = "";
+		while (iter.hasNext()) {
+			UserRoles roles = iter.next();
+			System.out.println(roles.getUserkey() + " : " + roles.getAuthority());
+			rolesStr += roles.getAuthority() + ",";
+		}
+		
+//		System.out.println(users.getUserRoles().toArray().toString());
+		System.out.println(rolesStr);
+		
+		System.out.println(rolesStr.substring(0, rolesStr.length()-1));
+	}
+	
+//	@Test
 	public void getLoginTest() {
 		
 		Users users = usersService.getUsers("mansoo", "mansoo");

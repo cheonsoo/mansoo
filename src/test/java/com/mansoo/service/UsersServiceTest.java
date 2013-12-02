@@ -25,7 +25,7 @@ public class UsersServiceTest {
 		System.out.println(users.getUsername());
 	}
 	
-	@Test
+	//@Test
 	public void getUsersTest2() {
 		usersService.getUsers("mansoo", "mansoo");
 	}

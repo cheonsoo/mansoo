@@ -59,6 +59,7 @@
                 <value>/sql/hibernate/mapper/ACCOUNT.xml</value>
                 <value>/sql/hibernate/mapper/Contact.xml</value>
 				<value>/sql/hibernate/mapper/USERS.xml</value>
+				<value>/sql/hibernate/mapper/USER_ROLES.xml</value>
             </list>
         </property>
     </bean>

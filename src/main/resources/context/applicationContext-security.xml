@@ -36,27 +36,33 @@
 	
 	<security:authentication-manager>
 		
-		<security:authentication-provider user-service-ref="userService" />
+		<!-- <security:authentication-provider user-service-ref="userService" /> -->
 		
-		<!-- 
-		<security:authentication-provider>
+		<security:authentication-provider user-service-ref="userService">
+		
+			<!--
 			<security:jdbc-user-service 
 					data-source-ref="dataSource" 
 					users-by-username-query="select username, password, enabled from users where username=?"
 					authorities-by-username-query="select u.username, ur.authority from users u, user_roles ur where u.username = ur.username and u.username=?" />
-					
+			-->
+			
+			<!-- 
 			<security:jdbc-user-service 
 					data-source-ref="dataSource" 
 					users-by-username-query="SELECT USERNAME, PASSWORD, ENABLED FROM USERS WHERE USERNAME=?"
 					authorities-by-username-query="SELECT U.USERNAME, UR.AUTHORITY FROM USERS U, USER_ROLES UR WHERE U.USERKEY = UR.USERKEY AND U.USERNAME=?" />
+			 -->
+			
 		</security:authentication-provider>
-		 -->
 		
-		<!-- <security:authentication-provider>
+		<!-- 
+		<security:authentication-provider>
 			<security:user-service>
 				<security:user name="mansoo" password="mansoo" authorities="ROLE_USER" />
 			</security:user-service>
-		</security:authentication-provider> -->
+		</security:authentication-provider>
+		-->
 		
 		 
 	</security:authentication-manager>

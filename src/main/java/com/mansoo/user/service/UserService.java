@@ -2,9 +2,11 @@ package com.mansoo.user.service;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Iterator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.mansoo.board.data.UserRoles;
 import com.mansoo.board.data.Users;
 import com.mansoo.board.service.UsersService;
 
@@ -24,12 +27,28 @@ public class UserService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		Collection<GrantedAuthority> authorities = Arrays.asList((GrantedAuthority) new SimpleGrantedAuthority("ROLE_USER"));
+//		UserDetails userDetails = new User(username, "admin", true, false, false, false, authorities);
 		
 		Users users = usersService.getUsers(username);
 		
-//		UserDetails userDetails = new User(username, "admin", true, false, false, false, authorities);
-		UserDetails userDetails = new User(users.getUsername(), users.getPassword(), authorities);
+//		GrantedAuthority[] grantedAuthorities = {new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER")};
+		
+		GrantedAuthority[] grantedAuthorities = new SimpleGrantedAuthority[10];
+		int idx = 0;
+		Iterator<UserRoles> iter = users.getUserRoles().iterator();
+		String rolesStr = "";
+		while (iter.hasNext()) {
+			UserRoles role = iter.next();
+			grantedAuthorities[idx] = new SimpleGrantedAuthority(role.getAuthority());
+			rolesStr += role.getAuthority() + ",";
+			idx++;
+		}
+		Collection<GrantedAuthority> authorities = Arrays.asList(grantedAuthorities);
+		Collection<GrantedAuthority> authorities2 = Arrays.asList((GrantedAuthority) new SimpleGrantedAuthority("ROLE_USER"));
+		
+		rolesStr = rolesStr.substring(0, rolesStr.length()-1);
+		
+		UserDetails userDetails = new User(users.getUsername(), users.getPassword(), AuthorityUtils.createAuthorityList(rolesStr));
 		
 		System.out.println("password : " + userDetails.getPassword());
 		
