@@ -13,6 +13,11 @@ public class UsersServiceImpl implements UsersService {
 	private UserDAO userDAO;
 	
 	@Override
+	public Users getUsers(String username) {
+		return userDAO.getUser(username);
+	}
+	
+	@Override
 	public Users getUsers(String username, String password) {
 		return userDAO.getUser(username, password);
 	}

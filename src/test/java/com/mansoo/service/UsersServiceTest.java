@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mansoo.board.data.Account;
+import com.mansoo.board.data.Users;
 import com.mansoo.board.service.UsersService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -19,7 +20,13 @@ public class UsersServiceTest {
 	private UsersService usersService;
 	
 	@Test
-	public void getAccountTest() {
+	public void getUsersTest() {
+		Users users = usersService.getUsers("mansoo");
+		System.out.println(users.getUsername());
+	}
+	
+	@Test
+	public void getUsersTest2() {
 		usersService.getUsers("mansoo", "mansoo");
 	}
 }

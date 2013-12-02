@@ -15,6 +15,16 @@ public class UserDAOImpl implements UserDAO {
     }
 	
     @Override
+	public Users getUser(String userId) {
+    	List<Users> userList = this.sessionFactory.getCurrentSession().createQuery("FROM Users u where u.username='" + userId + "'").list();
+    	Users users = null;
+    	if (userList.size() > 0) {
+    		users = userList.get(0);
+    	}
+		return users;
+	}
+    
+    @Override
 	public Users getUser(String userId, String password) {
     	List<Users> userList = this.sessionFactory.getCurrentSession().createQuery("FROM Users u where u.username='" + userId + "' and u.password='" + password + "'").list();
     	Users users = null;
