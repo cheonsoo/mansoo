@@ -20,16 +20,10 @@ import com.mansoo.board.service.UsersService;
 public class UserService implements UserDetailsService {
 	
 	@Autowired
-	private AccountService accountService;
-	
-	@Autowired
 	private UsersService usersService;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
-		Account account = new Account();
-		account = accountService.getAccount(account);
 		
 		Collection<GrantedAuthority> authorities = Arrays.asList((GrantedAuthority) new SimpleGrantedAuthority("ROLE_USER"));
 //		UserDetails userDetails = new User(username, "admin", true, false, false, false, authorities);
