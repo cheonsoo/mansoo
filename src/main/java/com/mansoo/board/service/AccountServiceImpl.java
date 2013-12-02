@@ -9,7 +9,7 @@ import com.mansoo.board.data.Account;
 
 
 @Transactional
-@Service
+@Service("accountService")
 public class AccountServiceImpl implements AccountService {
 
     @Autowired

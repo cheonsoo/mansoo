@@ -79,13 +79,14 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
     
-    <!-- <bean id="accountService" class="com.mansoo.board.service.AccountServiceImpl">
-		<property name="accountDAO" ref="accountDAO" />
+    <bean id="accountService" class="com.mansoo.board.service.AccountServiceImpl" />
+    
+	<bean id="usersService" class="com.mansoo.board.service.UsersServiceImpl" />
+	
+    <!-- <bean id="contactService" class="com.mansoo.board.service.ContactServiceImpl">
+		<property name="contactDAO" ref="contactDAO" />
 	</bean> -->
     
-<!--     <bean id="userService" class="com.mansoo.user.service.UserServiceImpl">
-		<property name="accountDAO" ref="accountDAO" />
-	</bean> -->
 	
 	
     

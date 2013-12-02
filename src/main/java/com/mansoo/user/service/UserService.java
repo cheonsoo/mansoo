@@ -14,12 +14,16 @@ import org.springframework.stereotype.Service;
 
 import com.mansoo.board.data.Account;
 import com.mansoo.board.service.AccountService;
+import com.mansoo.board.service.UsersService;
 
 @Service
 public class UserService implements UserDetailsService {
 	
 	@Autowired
 	private AccountService accountService;
+	
+	@Autowired
+	private UsersService usersService;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

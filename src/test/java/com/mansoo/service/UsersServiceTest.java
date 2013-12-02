@@ -8,21 +8,18 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mansoo.board.data.Account;
-import com.mansoo.board.service.AccountService;
+import com.mansoo.board.service.UsersService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:context/applicationContext*.xml")
 @Transactional
-public class AccountServiceTest {
+public class UsersServiceTest {
 	
 	@Autowired
-	private AccountService accountService;
+	private UsersService usersService;
 	
 	@Test
 	public void getAccountTest() {
-		Account account = new Account();
-		account.setAccountKey(1);
-		account = accountService.getAccount(account);
-		System.out.println(account.getAccountId());
+		usersService.getUsers("mansoo", "mansoo");
 	}
 }
