@@ -105,18 +105,22 @@ INSERT INTO users(`username`,`password`,`enabled`) VALUES( 'admin','admin',1);
 INSERT INTO authorities(`username`,`authority`) VALUES('admin','ROLE_ADMIN');
 */
 
-create table users (
-    username varchar(50) not null primary key,
-    password varchar(50) not null,
-    enabled boolean not null
-) engine = InnoDb;
+CREATE TABLE USERS (
+	USERKEY INTEGER(11) NOT NULL AUTO_INCREMENT,
+    USERNAME VARCHAR(50) NOT NULL,
+    PASSWORD VARCHAR(50) NOT NULL,
+    ENABLED BOOLEAN NOT NULL,
+    PRIMARY KEY (USERKEY)
+) ENGINE = INNODB;
 
-create table user_roles (
-    username varchar(50) not null,
-    authority varchar(50) not null,
-    foreign key (username) references users (username),
-    unique index authorities_idx_1 (username, authority)
-) engine = InnoDb;
+CREATE TABLE USER_ROLES (
+    USERKEY INTEGER(11) NOT NULL,
+    AUTHORITY VARCHAR(50) NOT NULL,
+    FOREIGN KEY (USERKEY) REFERENCES USERS (USERKEY),
+    UNIQUE INDEX AUTHORITIES_IDX_1 (USERKEY, AUTHORITY)
+) ENGINE = INNODB;
 
-INSERT INTO users(`username`,`password`,`enabled`) VALUES( 'admin','admin',1);
-INSERT INTO user_roles(`username`,`authority`) VALUES('admin','ROLE_ADMIN');
+INSERT INTO USERS(`USERNAME`,`PASSWORD`,`ENABLED`) VALUES('admin', 'admin', 1);
+INSERT INTO USER_ROLES(`USERKEY`,`AUTHORITY`) VALUES(1, 'ROLE_ADMIN');
+INSERT INTO USERS(`USERNAME`,`PASSWORD`,`ENABLED`) VALUES('mansoo', 'mansoo', 1);
+INSERT INTO USER_ROLES(`USERKEY`,`AUTHORITY`) VALUES(2, 'ROLE_USER');

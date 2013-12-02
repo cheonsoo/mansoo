@@ -11,7 +11,7 @@ import com.mansoo.board.data.Contact;
 
 @Repository
 public class ContactDAOImpl implements ContactDAO {
-
+	
     private SessionFactory sessionFactory;
 
     public void setSessionFactory(SessionFactory sessionFactory) {

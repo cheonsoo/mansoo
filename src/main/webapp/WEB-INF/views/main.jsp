@@ -25,42 +25,13 @@
 	
 </head>
 
-<body>
+<body> 
 	
-	<div class="topNavi">
-		<ul id="navigation" class="slimmenu">
-			<li><a href="/mansoo/main">HOME</a></li>
-			<li><a href="/mansoo/main/?body=/contact">CONTACT</a></li>
-		    <li>
-		        <a href="#">MENU 1</a>
-		        <ul>
-		            <li>
-		                <a href="#">MENU 1.1</a>
-		                <ul>
-		                    <li><a href="#">MENU 1.1.1</a></li>
-		                    <li>
-		                        <a href="#">MENU 1.1.2</a>
-		                        <ul>
-		                            <li><a href="#">MENU 1.1.2.1</a></li>
-		                            <li><a href="#">MENU 1.1.2.2</a></li>
-		                        </ul>
-		                    </li>
-		                </ul>
-		            </li>
-		            <li><a href="#">MENU 1.2</a></li>
-		        </ul>
-		    </li>
-		</ul>
-		<div><jsp:include page="/loginpage" /></div>
-	</div>
+	<jsp:include page="./top_nav.jsp" />
 	
 	<div class="mainOuter">
 		<div class="mainDiv">
 			<div>
-				<div class="header">
-					<div>MANSOO HOME</div>
-					
-				</div>
 				
 				<div id="bodyContents">
 					<jsp:include page="${body}" />

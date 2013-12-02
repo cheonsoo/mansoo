@@ -58,7 +58,7 @@
             <list>
                 <value>/sql/hibernate/mapper/ACCOUNT.xml</value>
                 <value>/sql/hibernate/mapper/Contact.xml</value>
-				<!-- <value>/sql/hibernate/mapper/ACCOUNT_AUTHORITY.xml</value> -->
+				<value>/sql/hibernate/mapper/USERS.xml</value>
             </list>
         </property>
     </bean>
@@ -75,15 +75,17 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
     
-    
+    <bean id="userDAO" class="com.mansoo.board.dao.UserDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
     
     <!-- <bean id="accountService" class="com.mansoo.board.service.AccountServiceImpl">
 		<property name="accountDAO" ref="accountDAO" />
 	</bean> -->
     
-    <bean id="userService" class="com.mansoo.user.service.UserServiceImpl">
+<!--     <bean id="userService" class="com.mansoo.user.service.UserServiceImpl">
 		<property name="accountDAO" ref="accountDAO" />
-	</bean>
+	</bean> -->
 	
 	
     

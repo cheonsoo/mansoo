@@ -2,9 +2,27 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.mansoo.board.data.User" table="USER">
+    <class name="com.mansoo.board.data.Users" table="USERS">
     
-        <id name="userKey" type="int">
+    	<id name="userkey" type="int">
+            <column name="USERKEY" />
+            <generator class="identity" />
+        </id>
+    	
+        <property name="username" type="string">
+            <column name="USERNAME" length="50" not-null="false" />
+        </property>
+	
+		<property name="password" type="string">
+            <column name="PASSWORD" length="50" not-null="false" />
+        </property>
+        
+        <property name="enabled" type="boolean">
+            <column name="ENABLED" not-null="false" />
+        </property>
+        
+        
+<!--         <id name="userKey" type="int">
             <column name="USER_KEY" />
             <generator class="identity" />
         </id>
@@ -19,7 +37,7 @@
         
         <property name="password" type="string">
             <column name="PASSWORD" length="30" not-null="false" />
-        </property>
+        </property> -->
         
     </class>
 </hibernate-mapping>

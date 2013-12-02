@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 
-import com.mansoo.board.data.User;
+import com.mansoo.board.data.Users;
 
 public class UserDAOImpl implements UserDAO {
 	
@@ -15,14 +15,18 @@ public class UserDAOImpl implements UserDAO {
     }
 	
     @Override
-	public User getUser(String UserId, String password) {
-		this.sessionFactory.getCurrentSession().createQuery("FROM USER").list();
-		return null;
+	public Users getUser(String userId, String password) {
+    	List<Users> userList = this.sessionFactory.getCurrentSession().createQuery("FROM Users u where u.username='" + userId + "' and u.password='" + password + "'").list();
+    	Users users = null;
+    	if (userList.size() > 0) {
+    		users = userList.get(0);
+    	}
+		return users;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<User> getUserList() {
-		return this.sessionFactory.getCurrentSession().createQuery("FROM USER").list();
+	public List<Users> getUserList() {
+		return this.sessionFactory.getCurrentSession().createQuery("FROM Users").list();
 	}
 }

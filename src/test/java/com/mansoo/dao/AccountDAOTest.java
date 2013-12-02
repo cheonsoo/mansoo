@@ -28,34 +28,35 @@ public class AccountDAOTest {
 	
 	@Autowired
 	private AccountDAO accountDAO;
-	@Autowired
-	private UserService userService;
-	@Autowired
-	private AccountService accountService;
 	
-//	@Test
+//	@Autowired
+//	private UserService userService;
+//	@Autowired
+//	private AccountService accountService;
+	
+	@Test
 	public void getAccountListTest() {
 		List<Account> accountList = accountDAO.getAccountList();
 		for (Account account : accountList) {
 			System.out.println(account.getAccountKey() + " : " + account.getAccountId());
 		}
-		
-		Collection<GrantedAuthority> authorities = Arrays.asList((GrantedAuthority) new SimpleGrantedAuthority("ROLE_USER"));
-		UserDetails userDetails = new User("mansoo", "mansoo", true, false, false, false, authorities);
-		
-		System.out.println(userDetails.getUsername());
-		System.out.println(userDetails.getPassword());
-		System.out.println(userDetails.getAuthorities());
+//		
+//		Collection<GrantedAuthority> authorities = Arrays.asList((GrantedAuthority) new SimpleGrantedAuthority("ROLE_USER"));
+//		UserDetails userDetails = new User("mansoo", "mansoo", true, false, false, false, authorities);
+//		
+//		System.out.println(userDetails.getUsername());
+//		System.out.println(userDetails.getPassword());
+//		System.out.println(userDetails.getAuthorities());
 		
 	}
 	
 //	@Test
 	public void getAccount() {
-		Account account = new Account();
-		account.setAccountKey(1);
-		account = accountService.getAccount(account);
+//		Account account = new Account();
+//		account.setAccountKey(1);
+//		account = accountService.getAccount(account);
 //		account = accountDAO.getAccount(account);
-		System.out.println(account.getAccountId());
+//		System.out.println(account.getAccountId());
 	}
 	
 //	@Test
@@ -69,15 +70,15 @@ public class AccountDAOTest {
 	
 //	@Test
 	public void getUserDetails() {
-		Account account = new Account();
-		account.setAccountKey(1);
-		UserDetails userDetails = userService.loadUserByUsername("admin");
-		System.out.println(userDetails.getAuthorities());
+//		Account account = new Account();
+//		account.setAccountKey(1);
+//		UserDetails userDetails = userService.loadUserByUsername("admin");
+//		System.out.println(userDetails.getAuthorities());
 	}
 	
-	@Test
+//	@Test
 	public void getAccountAuthority() {
-		AccountAuthority aa = new AccountAuthority();
-		accountDAO.getAccount("");
+//		AccountAuthority aa = new AccountAuthority();
+//		accountDAO.getAccount("");
 	}
 }
