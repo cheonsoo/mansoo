@@ -15,14 +15,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mansoo.board.data.UserRoles;
-import com.mansoo.board.data.Users;
-import com.mansoo.board.service.UsersService;
+import com.mansoo.user.data.UserRoles;
+import com.mansoo.user.data.Users;
+import com.mansoo.user.service.UsersService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:context/applicationContext*.xml")
 @Transactional
-public class UserServiceTest {
+public class LoginServiceTest {
 	
 	@Autowired
 	private UsersService usersService;

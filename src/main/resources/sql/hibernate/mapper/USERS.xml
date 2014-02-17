@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.mansoo.board.data.Users" table="USERS">
+    <class name="com.mansoo.user.data.Users" table="USERS">
     
     	<id name="userkey" type="int">
             <column name="USERKEY" />
@@ -25,7 +25,7 @@
         	<key>
         		<column name="USERKEY" not-null="true" />
         	</key>
-        	<one-to-many class="com.mansoo.board.data.UserRoles" />
+        	<one-to-many class="com.mansoo.user.data.UserRoles" />
         </set>
         
     </class>

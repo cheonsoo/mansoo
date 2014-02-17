@@ -76,13 +76,13 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
     
-    <bean id="userDAO" class="com.mansoo.board.dao.UserDAOImpl">
+    <bean id="userDAO" class="com.mansoo.user.dao.UserDAOImpl">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
     
     <bean id="accountService" class="com.mansoo.board.service.AccountServiceImpl" />
     
-	<bean id="usersService" class="com.mansoo.board.service.UsersServiceImpl" />
+	<bean id="usersService" class="com.mansoo.user.service.UsersServiceImpl" />
 	
     <!-- <bean id="contactService" class="com.mansoo.board.service.ContactServiceImpl">
 		<property name="contactDAO" ref="contactDAO" />

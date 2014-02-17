@@ -27,15 +27,15 @@ public class ContactController {
         return "contact";
     }
     
-    @RequestMapping(value="/main/add", method=RequestMethod.POST)
+    @RequestMapping(value="/add", method=RequestMethod.POST)
     public String addContact(@ModelAttribute("contact") Contact contact, BindingResult result) {
         contactService.addContact(contact);
-        return "redirect:/main/?body=/contact";
+        return "redirect:/main?body=/contact";
     }
     
     @RequestMapping("/delete/{contactId}")
     public String deleteContact(@PathVariable("contactId") int contactId) {
         contactService.removeContact(contactId);
-        return "redirect:/?body=/contact";
+        return "redirect:/main?body=/contact";
     }
 }

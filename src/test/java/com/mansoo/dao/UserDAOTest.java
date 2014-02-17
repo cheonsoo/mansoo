@@ -11,8 +11,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mansoo.board.dao.UserDAO;
-import com.mansoo.board.data.Users;
+import com.mansoo.user.dao.UserDAO;
+import com.mansoo.user.data.Users;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:context/applicationContext*.xml")

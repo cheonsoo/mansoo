@@ -1,9 +1,9 @@
 <div class="topNavi">
 	<ul id="navigation" class="slimmenu">
 		<li><a href="/mansoo/main">HOME</a></li>
-		<li><a href="/mansoo/main/?body=/contact">CONTACT</a></li>
-		<li><a href="/mansoo/main/?body=/user">USER</a></li>
-		<li><a href="/mansoo/main/?body=/board">BOARD</a></li>
+		<li><a href="/mansoo/main?body=/contact">CONTACT</a></li>
+		<li><a href="/mansoo/main?body=/user">USER</a></li>
+		<li><a href="/mansoo/main?body=/board">BOARD</a></li>
 	    <li>
 	        <a href="#">ABOUT</a>
 	        <ul>

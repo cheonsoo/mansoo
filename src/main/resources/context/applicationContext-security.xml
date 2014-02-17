@@ -16,12 +16,12 @@
 		<!-- <security:form-login login-page="/login.do" default-target-url='/' /> -->
 		
 		<security:intercept-url pattern="/favicon.ico" access="hasAnyRole('ROLE_ANONYMOUS', 'ROLE_USER', 'ROLE_ADMIN')" />
-		<security:intercept-url pattern="/main" access="hasAnyRole('ROLE_ANONYMOUS', 'ROLE_USER', 'ROLE_ADMIN')" />
+		<security:intercept-url pattern="/main/*" access="hasAnyRole('ROLE_ANONYMOUS', 'ROLE_USER', 'ROLE_ADMIN')" />
 		<security:intercept-url pattern="/loginpage" access="hasAnyRole('ROLE_ANONYMOUS', 'ROLE_USER', 'ROLE_ADMIN')" />
 		
 		<!-- <security:intercept-url pattern="/main" access="IS_AUTHENTICATED_ANONYMOUSLY" /> -->
 		
-		<security:intercept-url pattern="/main/**" access="hasRole('ROLE_USER', 'ROLE_ADMIN')" />
+		<security:intercept-url pattern="/main/*" access="hasRole('ROLE_ANONYMOUS', 'ROLE_USER', 'ROLE_ADMIN')" />
 		
 		<security:form-login login-page="/main"
 							 default-target-url="/main"
@@ -32,13 +32,13 @@
 		
 	</security:http>
 	
-	<bean id="userService" class="com.mansoo.user.service.UserService" />
+	<bean id="loginService" class="com.mansoo.user.service.LoginService" />
 	
 	<security:authentication-manager>
 		
 		<!-- <security:authentication-provider user-service-ref="userService" /> -->
 		
-		<security:authentication-provider user-service-ref="userService">
+		<security:authentication-provider user-service-ref="loginService">
 		
 			<!--
 			<security:jdbc-user-service 
